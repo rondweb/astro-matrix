@@ -1,11 +1,20 @@
-import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIST_DIR = join(process.cwd(), 'dist');
+const SITE_CONFIG_PATH = join(process.cwd(), 'src', 'site.config.ts');
 
 if (!existsSync(DIST_DIR)) {
   console.error('[check:about-runtime] dist directory not found. Run npm run build first.');
   process.exit(1);
+}
+
+// Skip check when about page is intentionally disabled
+const siteConfig = readFileSync(SITE_CONFIG_PATH, 'utf8');
+const aboutPageDisabled = /enableAboutPage\s*:\s*false/.test(siteConfig);
+if (aboutPageDisabled) {
+  console.log('[check:about-runtime] about page disabled, skipping validation.');
+  process.exit(0);
 }
 
 const localeDirs = readdirSync(DIST_DIR, { withFileTypes: true })

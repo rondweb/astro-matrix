@@ -24,16 +24,41 @@ export { normalizeI18nConfig } from './site.config.runtime.ts';
  * Omitted fields safely fall back to theme defaults.
  */
 export const THEME_CONFIG = defineThemeConfig({
-  // Example:
-  // i18n: {
-  //   defaultLocale: 'en',
-  //   locales: {
-  //     en: {
-  //       meta: { label: 'English', hreflang: 'en', ogLocale: 'en_US' },
-  //       site: { hero: 'Your localized hero copy.' },
-  //       about: { metaLine: '$ profile booted | mode: builder' },
-  //       messages: { nav: { home: 'Home' } },
-  //     },
-  //   },
-  // },
+  site: {
+    title: 'LNDS Framework - Live For Nothing or Die For Something',
+    description:
+      'LNDS is a modern framework for human meaning, identity, and purpose in the age of AI. A philosophical and practical system designed to help individuals remove their masks.',
+    url: 'https://lnds.space',
+    author: 'LNDS',
+    tagline: 'Live for Nothing or Die for Something',
+  },
+  theme: {
+    enableAboutPage: false,
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: {
+      en: {
+        meta: {
+          label: 'English',
+          hreflang: 'en',
+          ogLocale: 'en_US',
+        },
+        site: {
+          hero: 'LNDS is a modern framework for human meaning, identity, and purpose in the age of AI. A philosophical and practical system designed to help individuals remove their masks.',
+        },
+      },
+    },
+    routing: {
+      defaultLocalePrefix: 'always',
+    },
+  },
+  social: {
+    links: [
+      {
+        href: 'https://www.facebook.com/profile.php?id=61569271075332',
+        label: 'Facebook',
+      },
+    ],
+  },
 });

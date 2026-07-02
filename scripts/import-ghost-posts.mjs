@@ -9,14 +9,6 @@ const TARGET_DIR = 'src/content/blog/en';
 const IMG_DIR = 'public/images/posts';
 const IMG_BASE = 'https://lnds-lnds-site.orqa63.easypanel.host';
 
-// Extract slug from URL
-function slugFromUrl(url) {
-  if (!url) return null;
-  const u = new URL(url);
-  const parts = u.pathname.split('/').filter(Boolean);
-  return parts[parts.length - 1] || null;
-}
-
 // Download file via https/http
 async function download(url, dest) {
   const lib = url.startsWith('https') ? https : http;
