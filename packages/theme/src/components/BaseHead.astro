@@ -3,7 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
-import FallbackImage from '../assets/theme/placeholders/theme-placeholder-1.jpg';
+import OgDefaultImage from '../assets/theme/placeholders/og-default-logo.png';
 import { buildHeadLocaleState, buildJsonLdSchemas } from '../utils/head';
 import { SITE_AUTHOR, SITE_TITLE, SITE_URL } from '@anglefeint/site-config/site';
 import type { Locale } from '@anglefeint/site-i18n/config';
@@ -29,7 +29,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const {
   title,
   description,
-  image = FallbackImage,
+  image = OgDefaultImage,
   imageAlt = title,
   pageType = 'website',
   publishedTime,
@@ -69,8 +69,7 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" href="/favicon.ico" />
+<link rel="icon" type="image/jpeg" href="/favicon.jpg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={rssURL} />
 <meta name="generator" content={Astro.generator} />
