@@ -64,6 +64,10 @@ const jsonLdSchemas = buildJsonLdSchemas({
   schema,
 });
 const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c');
+const gaId = import.meta.env.PUBLIC_GA_ID;
+const gtagScript = gaId
+  ? `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${gaId}');`
+  : '';
 ---
 
 <!-- Global Metadata -->
@@ -139,3 +143,6 @@ const serializeJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, 
     <script is:inline type="application/ld+json" set:html={serializeJsonLd(schemaItem)} />
   ))
 }
+
+{gaId && <script is:inline src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} async />}
+{gaId && <script is:inline set:html={gtagScript} />}
