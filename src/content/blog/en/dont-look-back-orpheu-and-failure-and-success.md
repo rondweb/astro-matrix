@@ -1,7 +1,7 @@
 ---
 title: "Don't look back."
 description: 'About the certainty of failure, the faith that success requires, and the last step that Orpheus could not take.'
-pubDate: '2026-06-02T09:17:40.000-04:00'
+pubDate: '2026-07-22T09:17:40.000-04:00'
 heroImage: '../../../assets/images/posts/silhouette_staircase_cinematic.webp'
 heroWidth: 2000
 heroHeight: 1333

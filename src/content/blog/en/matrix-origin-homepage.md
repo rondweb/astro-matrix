@@ -2,7 +2,7 @@
 title: 'Why Home Starts in the Matrix'
 subtitle: 'Our opening scene is a signal, not a landing page'
 description: 'Why the homepage uses Matrix language: first impression, memory, and identity.'
-pubDate: '2026-03-04'
+pubDate: '2026-03-11'
 heroImage: '../../../assets/blog/default-covers/matrix-02.webp'
 aiModel: 'anglefeint-core'
 aiMode: 'narrative'
